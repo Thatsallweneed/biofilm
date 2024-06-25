@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<style>
+    .signup-container {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        margin: 40px auto 0;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background: #fff;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form-group {
+        flex: 1;
+        margin: 0 5px;
+    }
+
+    .form-row .form-group:first-child {
+        margin-right: 10px;
+    }
+
+    .form-row .form-group:last-child {
+        margin-left: 10px;
+    }
+
+    .password-input-container, .form-control {
+        position: relative;
+        display: block;
+    }
+
+    .toggle-password {
+        position: absolute;
+        cursor: pointer;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ccc;
+    }
+
+    .form-control {
+        height: 34px;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .password-requirements {
+        font-size: 12px;
+        color: #666;
+        padding: 5px 0;
+    }
+
+    .flash-messages {
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .alert {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 5px;
+        color: white;
+        background-color: #28a745;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-top: 8px;
+    }
+</style>
+
+<div class="signup-container">
+    <h2>Create an Account</h2>
+    <form id="signupForm" action="{{ url_for('auth.signup') }}" method="post" onsubmit="return validateForm()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" class="form-control" placeholder="Your first name" required aria-label="First Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" class="form-control" placeholder="Your last name" required aria-label="Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required aria-label="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-input-container">
+                <input type="password" id="password" name="password" class="form-control" 
+                       placeholder="Create a password" required aria-label="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <span class="toggle-password" onclick="togglePasswordVisibility('password')">👁️</span>
+            </div>
+            <div class="password-requirements">
+                Password must be at least 8 characters and include uppercase, lowercase, and numbers.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="password-input-container">
+                <input type="password" id="confirm-password" name="confirm_password" class="form-control" 
+                       placeholder="Confirm your password" required aria-label="Confirm Password">
+                <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">👁️</span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+
+    <!-- Display Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<script>
+    function togglePasswordVisibility(inputId) {
+        var input = document.getElementById(inputId);
+        if (input.type === "password") {
+            input.type = "text";
+            input.nextElementSibling.style.color = '#999'; // Lighten the eye icon color when active
+        } else {
+            input.type = "password";
+            input.nextElementSibling.style.color = '#ccc'; // Reset to lighter color
+        }
+    }
+
+    function validateForm() {
+        var email = document.getElementById('email').value;
+        var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm-password').value;
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return false;
+        }
+        
+        return true;
+    }
+</script>
+{% endblock %}

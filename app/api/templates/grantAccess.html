@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Grant Access{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+    <header>Grant Access</header>
+    
+    <!-- Grant Access Form -->
+    <form id="grantAccessForm" method="post" action="{{ url_for('views.grantAccess') }}">
+        <div class="field email">
+            <div class="input-area">
+                <input type="email" id="grantEmail" name="grantEmail" placeholder="Enter the email" required>
+                <i class="icon fas fa-envelope"></i>
+                <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Email can't be blank</div>
+        </div>
+        <div class="field">
+            <div class="checkbox-container">
+                <label for="uploadImageAccess">Upload Image Access</label>
+                <input type="checkbox" id="uploadImageAccess" name="uploadImageAccess">
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+
+    <!-- Display Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show d-flex align-items-center" role="alert">
+                        {% if category == 'success' %}
+                            <i class="bi bi-check-circle-fill"></i>
+                        {% elif category == 'error' %}
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                        {% endif %}
+                        <strong class="mx-2">{{ message }}</strong>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<style>
+    body {
+        background: #f2f2f2;
+    }
+    .login-wrapper {
+        background: #fff;
+        padding: 25px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin: 60px auto; /* Center horizontally and add margin at the top */
+    }
+    .login-wrapper header {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .login-wrapper .field {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .login-wrapper .input-area {
+        position: relative;
+        width: 100%;
+    }
+    .login-wrapper .input-area input {
+        width: 100%;
+        padding: 10px 40px 10px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .login-wrapper .input-area .icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+    }
+    .login-wrapper .input-area .error-icon {
+        right: 30px;
+        color: #e74c3c;
+        display: none;
+    }
+    .login-wrapper .error-txt {
+        color: #e74c3c;
+        display: none;
+        font-size: 0.875rem;
+    }
+    .login-wrapper .btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #007bff;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .login-wrapper .btn:hover {
+        background: #0056b3;
+    }
+    .login-wrapper .checkbox-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Align items to the left */
+    }
+    .login-wrapper .checkbox-container label {
+        margin-right: 20px;
+    }
+    .alert {
+        margin-top: 20px;
+    }
+    .alert .bi-check-circle-fill {
+        color: #28a745;
+    }
+    .alert .bi-exclamation-triangle-fill {
+        color: #dc3545;
+    }
+</style>
+
+<!-- Include Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script>
+    document.getElementById('grantAccessForm').addEventListener('submit', function(event) {
+        const uploadImageAccess = document.getElementById('uploadImageAccess').checked;
+
+        if (!uploadImageAccess) {
+            event.preventDefault();
+            alert('Please select at least one access option.');
+        }
+    });
+</script>
+{% endblock %}

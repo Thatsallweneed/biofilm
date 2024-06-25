@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .login-wrapper {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-area {
+            position: relative;
+        }
+        .input-area input {
+            width: 100%;
+            padding: 10px 40px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .icon, .show-hide-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+            font-size: 16px;
+            color: #777;
+        }
+        .show-hide-icon {
+            right: 10px;
+            left: auto;
+            cursor: pointer;
+        }
+        .error-icon {
+            right: 10px;
+            left: auto;
+            color: red;
+        }
+        .signup-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .signup-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="login-body">
+    <div class="login-wrapper">
+        <header>Login Form</header>
+        
+        <!-- Login Form -->
+        <form method="post" action="{{ url_for('auth.login') }}">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" id="email" name="email" placeholder="Email Address" required>
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Email can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <i class="icon fas fa-lock"></i>
+                    <i class="show-hide-icon fas fa-eye" onclick="togglePassword()"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Password can't be blank</div>
+            </div>
+            <div class="pass-txt"><a href="#">Forgot password?</a></div>
+            <input type="submit" value="Login" class="btn btn-success">
+        </form>
+
+        <a href="{{ url_for('auth.signup') }}" class="signup-link">Don't have an account? Sign up</a>
+
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info alert-dismissible d-flex align-items-center fade show">
+                        <i class="bi-info-circle-fill"></i>
+                        <strong class="mx-2">{{ message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const showHideIcon = document.querySelector('.show-hide-icon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                showHideIcon.classList.remove('fa-eye');
+                showHideIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                showHideIcon.classList.remove('fa-eye-slash');
+                showHideIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>

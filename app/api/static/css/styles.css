@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+.navbar {
+  background-color: rgb(230, 8, 8);
+  color: #fff;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #030202;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.details {
+  display: none; /* Initially hide the details */
+}
+
+li:hover .details {
+  display: block; /* Show the details when the parent li element is hovered over */
+}
+
+/* Scoped Styles for Login Form */
+.login-body {
+  background: url('bg_s.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.login-wrapper {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.login-wrapper .input-area {
+  position: relative;
+  margin-bottom: 15px;
+}
+.login-wrapper .input-area input {
+  width: 100%;
+  padding: 10px 40px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+.login-wrapper .input-area .icon, .login-wrapper .input-area .error-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.login-wrapper .input-area .icon {
+  left: 15px;
+  color: #aaa;
+}
+.login-wrapper .input-area .error-icon {
+  right: 15px;
+  color: red;
+  display: none;
+}
+.login-wrapper .error-txt {
+  display: none;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
+.login-wrapper .pass-txt {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.login-wrapper .pass-txt a {
+  color: #28a745;
+}
+.login-wrapper input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background: #28a745;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.5);
+}
+.login-wrapper input[type="submit"]:hover {
+  background: #218838;
+}
+
+
+/* Custom style error message to set icon size */
+.alert i[class^="bi-"]{
+  font-size: 1.5em;
+  line-height: 1;
+  }
+  
+
+/* New Scoped Styles for Signup Form */
+.signup-container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.signup-container .form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-container .form-group {
+  margin-bottom: 15px;
+}
+
+.signup-container .half-width {
+  flex: 1;
+  min-width: calc(50% - 10px);
+  margin-right: 10px;
+}
+
+.signup-container .half-width:last-child {
+  margin-right: 0;
+}
+
+.signup-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+.signup-container .form-group input.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.signup-container .btn-primary {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-container .btn-primary:hover {
+  background-color: #0056b3;
+}

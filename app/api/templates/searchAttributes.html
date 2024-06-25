@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}
+Search Attributes
+{% endblock %}
+
+{% block content %}
+<style>
+    .organism-name {
+        color: #000;
+        /* Default color for organism names */
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .organism-name.inactive {
+        color: #888;
+        /* Greyed out color for inactive organism names */
+    }
+
+    .details {
+        display: none;
+        /* Initially hide all details sections */
+        text-align: center;
+        margin: auto;
+        width: fit-content;
+        text-align: left;
+    }
+
+    .details.active {
+        display: block;
+        /* Only display the details section for the active organism */
+    }
+</style>
+
+<h1 align="center">Search Attributes</h1>
+<div
+    style="max-width: 1000px; margin: auto; padding: 20px; border: 1px solid #ccc; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #f9f9f9; border-radius: 10px;">
+    <form id="searchForm">
+        <input type="text" id="searchOrganism" name="searchOrganism" placeholder="Enter organism name..."
+            style="margin: auto; display: block;"><br><br>
+        <input type="text" id="searchNcbi" name="searchNcbi" placeholder="Enter NCBI ID..."
+            style="margin: auto; display: block;"><br><br>
+        <input type="submit" value="Search" style="margin: auto; display: block;">
+    </form>
+</div>
+<div id="results"></div>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+        var searchOrganism = document.getElementById('searchOrganism').value.trim();
+        var searchNcbi = document.getElementById('searchNcbi').value.trim();
+
+        if (searchOrganism && searchNcbi) {
+            alert('Please provide either an organism name or an NCBI ID, not both.');
+            return;
+        } else if (!searchOrganism && !searchNcbi) {
+            alert('Please provide either an organism name or an NCBI ID.');
+            return;
+        }
+
+        var queryParam = searchOrganism ? `searchOrganism=${encodeURIComponent(searchOrganism)}` : `searchNcbi=${encodeURIComponent(searchNcbi)}`;
+        fetch(`http://127.0.0.1:8000/searchattr?${queryParam}`, { method: 'GET' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data received:', data);
+                var resultsElement = document.getElementById('results');
+                resultsElement.innerHTML = '';
+
+                if (data.length > 0) {
+                    var resultsHtml = '';
+                    data.forEach((item, index) => {
+                        // Build your results HTML here
+                        resultsHtml += `<div>`;
+                        resultsHtml += `<button class="organism-name inactive" onclick="toggleJson(${index})">${item.organism_name}</button>`;
+                        resultsHtml += `<div id="json${index}" class="details">`;
+                        resultsHtml += `<p>Organism Name: ${item.organism_name}</p>`;
+                        resultsHtml += `<p>NCBI ID: ${item.ncbi_id}</p>`;
+                        resultsHtml += `<p>Experiment Name: ${item.experiment_name}</p>`;
+                        resultsHtml += `<p>Project: ${item.project}</p>`;
+                        resultsHtml += `<p>Lab Owner: ${item.lab_owner}</p>`;
+                        resultsHtml += `<p>Vessel Name: ${item.vessel_name}</p>`;
+                        resultsHtml += `<p>Substratum Name: ${item.substratum_name}</p>`;
+                        resultsHtml += `<p>Date Taken: ${item.date_taken}</p>`;
+                        resultsHtml += `<p>Release Date: ${item.release_date}</p>`;
+                        resultsHtml += `<p>Microscope Settings: ${item.microscope_settings}</p>`;
+                        resultsHtml += `<p>Imager: ${item.imager}</p>`;
+                        resultsHtml += `<p>Description: ${item.description}</p>`;
+                        resultsHtml += `<img src="data:image/jpeg;base64,${item.image_data}" alt="Experiment Image" width="400">`;
+                        resultsHtml += `<a href="/download-czi/${encodeURIComponent(item.czi_file_location)}" download>Download CZI File</a>`;
+                        resultsHtml += `</div></div><br>`;
+                    });
+                    resultsElement.innerHTML = resultsHtml;
+                } else {
+                    resultsElement.innerHTML = '<p>No results found.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching search results:', error);
+                document.getElementById('results').innerHTML = '<p>Error loading results.</p>';
+            });
+    });
+
+
+
+    function toggleJson(index) {
+        // Toggle visibility of details
+        var details = document.querySelectorAll('.details');
+        var buttons = document.querySelectorAll('.organism-name');
+        details.forEach((detail, idx) => {
+            if (idx === index) {
+                detail.classList.toggle('active');
+                buttons[idx].classList.toggle('inactive');
+            } else {
+                detail.classList.remove('active');
+                buttons[idx].classList.add('inactive');
+            }
+        });
+    }
+</script>
+
+<script>
+    let timeout; // Declare timeout variable outside to maintain its scope across multiple inputs
+
+    document.getElementById('searchOrganism').addEventListener('input', function () {
+        clearTimeout(timeout); // Clear the existing timeout
+        var input = this.value;
+
+        if (input.length > 3) {
+            timeout = setTimeout(() => {
+                fetch(`/search_recommendation?query=${encodeURIComponent(input)}&type=organism`, { method: 'GET' })
+                    .then(response => response.json())
+                    .then(data => {
+                        var dataList = document.getElementById('organismSuggestions');
+                        if (!dataList) {
+                            dataList = document.createElement('datalist');
+                            dataList.id = 'organismSuggestions';
+                            document.body.appendChild(dataList);
+                            document.getElementById('searchOrganism').setAttribute("list", "organismSuggestions");
+                        }
+                        dataList.innerHTML = ''; // Clear existing options
+                        data.forEach(item => {
+                            let option = document.createElement('option');
+                            option.value = item;
+                            dataList.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching suggestions:', error));
+            }, 300); // Wait 300ms after the user stops typing
+        }
+    });
+</script>
+
+
+{% endblock %}

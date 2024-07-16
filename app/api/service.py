@@ -198,6 +198,7 @@ def submitform():
             sftp.close()
             ssh_client.close()
 
+
 @app.route('/searchattr', methods=['GET'])            
 def search_attributes():
     try:
@@ -290,7 +291,7 @@ def search_recomendations():
         if len(query) < 4:
             return jsonify([]) 
         type_to_index_field = {
-            'organism': ('organisms', 'organism_name'),
+            'organism': ('organisms', 'ncbi_id_organism_name'),
             'experiment': ('experiments', 'experiment_name'),
             'project': ('projects', 'project')
         }

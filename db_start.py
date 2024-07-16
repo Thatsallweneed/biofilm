@@ -16,7 +16,7 @@ logger = get_logger(__name__)
 
 class DB_start():
     def __init__(self, ):
-        self.create_organisms()
+        #self.create_organisms()
         self.load_organisms()
         self.load_substratum()
         self.load_vessels()

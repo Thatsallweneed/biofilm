@@ -2661,3 +2661,259 @@
 2024-06-25 11:05:20,492 Thread-34 app.api.service INFO Connection to database created successfully
 2024-06-25 11:05:38,556 Thread-42 app.api.service INFO Connection to database created successfully
 2024-06-25 11:21:46,077 Thread-56 app.api.service INFO Connection to database created successfully
+2024-06-26 22:27:11,017 Thread-11 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 22:27:11,019 Thread-11 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-26 22:41:30,832 Thread-31 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 22:41:30,833 Thread-31 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-26 22:48:16,829 Thread-5 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 22:48:16,830 Thread-5 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-26 22:48:58,170 Thread-11 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 22:48:58,171 Thread-11 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-26 23:18:23,615 Thread-5 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 23:18:23,616 Thread-5 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-26 23:28:49,948 Thread-5 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 23:28:49,949 Thread-5 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-26 23:29:02,474 Thread-5 app.api.service ERROR While processing in Function db_conn, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(2003, "Can't connect to MySQL server on 'braid01.ncgr.org' (timed out)")' in Line Number 27  File Name service.py
+2024-06-26 23:29:02,475 Thread-5 utils ERROR While processing in Function fetch_userdata, we got <class 'AttributeError'> Exception. 
+ ''NoneType' object has no attribute 'cursor'' in Line Number 84  File Name utils.py
+2024-06-27 12:44:23,788 Thread-11 app.api.service INFO Connection to database created successfully
+2024-06-27 12:58:28,194 Thread-19 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 302  File Name service.py
+2024-06-27 16:10:03,978 MainThread perf INFO Starting inserting organisms data into database
+2024-06-27 16:10:09,679 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:10:58,634 MainThread perf INFO In elapsed_time=0:00:54.655978, Done inserting organisms data into database 
+2024-06-27 16:10:58,635 MainThread perf INFO Starting inserting substratum data into database
+2024-06-27 16:10:58,665 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:10:58,692 MainThread perf INFO In elapsed_time=0:00:00.056926, Done inserting substratum data into database 
+2024-06-27 16:10:58,693 MainThread perf INFO Starting inserting vessels data into database
+2024-06-27 16:10:58,726 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:10:58,747 MainThread perf INFO In elapsed_time=0:00:00.053911, Done inserting vessels data into database 
+2024-06-27 16:10:58,747 MainThread perf INFO Starting inserting labs data into database
+2024-06-27 16:10:58,756 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:10:58,775 MainThread perf INFO In elapsed_time=0:00:00.028053, Done inserting labs data into database 
+2024-06-27 16:12:46,628 MainThread perf INFO Starting indexing data
+2024-06-27 16:12:46,817 MainThread __main__ ERROR While processing in Function create_index, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 50  File Name es_start.py
+2024-06-27 16:12:46,833 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:13:06,136 MainThread __main__ ERROR While processing in Function bulk_index, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 81  File Name es_start.py
+2024-06-27 16:13:06,137 MainThread perf INFO In elapsed_time=0:00:19.508797, Done indexing data 
+2024-06-27 16:13:06,139 MainThread perf INFO Starting indexing data
+2024-06-27 16:13:06,616 MainThread __main__ ERROR While processing in Function create_index, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 50  File Name es_start.py
+2024-06-27 16:13:06,633 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:13:06,640 MainThread perf INFO In elapsed_time=0:00:00.501429, Done indexing data 
+2024-06-27 16:13:06,642 MainThread perf INFO Starting indexing data
+2024-06-27 16:13:06,700 MainThread __main__ ERROR While processing in Function create_index, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 50  File Name es_start.py
+2024-06-27 16:13:06,724 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:13:06,725 MainThread perf INFO In elapsed_time=0:00:00.083614, Done indexing data 
+2024-06-27 16:16:52,225 MainThread perf INFO Starting indexing data
+2024-06-27 16:16:52,379 MainThread __main__ ERROR While processing in Function create_index, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 50  File Name es_start.py
+2024-06-27 16:16:52,395 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:17:12,061 MainThread __main__ ERROR While processing in Function bulk_index, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 81  File Name es_start.py
+2024-06-27 16:17:12,062 MainThread perf INFO In elapsed_time=0:00:19.836790, Done indexing data 
+2024-06-27 16:18:38,455 Thread-10 app.api.service INFO Connection to database created successfully
+2024-06-27 16:18:58,600 Thread-15 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 302  File Name service.py
+2024-06-27 16:18:59,813 Thread-16 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 302  File Name service.py
+2024-06-27 16:19:01,240 Thread-17 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 302  File Name service.py
+2024-06-27 16:19:02,436 Thread-18 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elastic_transport.ConnectionError'> Exception. 
+ 'Connection error caused by: ConnectionError(Connection error caused by: ProtocolError(('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))))' in Line Number 302  File Name service.py
+2024-06-27 16:33:56,041 MainThread perf INFO Starting indexing data
+2024-06-27 16:33:56,208 MainThread app.api.service INFO Connection to database created successfully
+2024-06-27 16:36:00,303 MainThread perf INFO In elapsed_time=0:02:04.262575, Done indexing data 
+2024-06-30 12:54:20,076 MainThread perf INFO Starting indexing data
+2024-06-30 12:54:20,077 MainThread __main__ ERROR While processing in Function bulk_index, we got <class 'TypeError'> Exception. 
+ 'create_index() takes 2 positional arguments but 3 were given' in Line Number 164  File Name es_start.py
+2024-06-30 12:54:20,077 MainThread perf INFO In elapsed_time=0:00:00.000999, Done indexing data 
+2024-06-30 12:55:58,382 MainThread perf INFO Starting indexing data
+2024-06-30 12:55:58,625 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 12:58:11,792 MainThread perf INFO In elapsed_time=0:02:13.409662, Done indexing data 
+2024-06-30 13:00:40,278 Thread-11 app.api.service INFO Connection to database created successfully
+2024-06-30 13:01:08,986 Thread-13 app.api.service INFO Connection to database created successfully
+2024-06-30 13:01:43,860 Thread-25 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:01:45,082 Thread-26 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:01:46,187 Thread-27 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:01:47,635 Thread-28 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:01:48,263 Thread-29 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:02:06,595 Thread-30 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:02:45,510 Thread-39 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:02:47,163 Thread-40 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:02:47,879 Thread-41 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:03:17,684 Thread-42 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:03:19,079 Thread-43 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:03:19,846 Thread-44 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:03:21,453 Thread-45 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 302  File Name service.py
+2024-06-30 13:13:39,417 MainThread perf INFO Starting indexing data
+2024-06-30 13:13:39,564 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:15:36,100 MainThread perf INFO In elapsed_time=0:01:56.682690, Done indexing data 
+2024-06-30 13:15:36,101 MainThread perf INFO Starting indexing data
+2024-06-30 13:15:36,160 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:15:36,163 MainThread perf INFO In elapsed_time=0:00:00.061603, Done indexing data 
+2024-06-30 13:15:36,163 MainThread perf INFO Starting indexing data
+2024-06-30 13:15:36,223 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:15:36,224 MainThread perf INFO In elapsed_time=0:00:00.061361, Done indexing data 
+2024-06-30 13:24:45,589 MainThread perf INFO Starting indexing data
+2024-06-30 13:24:45,706 MainThread __main__ ERROR While processing in Function create_index, we got <class 'ValueError'> Exception. 
+ 'Empty value passed for parameter 'index'' in Line Number 50  File Name es_start.py
+2024-06-30 13:24:45,713 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:26:43,725 MainThread perf INFO In elapsed_time=0:01:58.135942, Done indexing data 
+2024-06-30 13:26:43,726 MainThread perf INFO Starting indexing data
+2024-06-30 13:26:43,743 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:26:43,745 MainThread perf INFO In elapsed_time=0:00:00.018746, Done indexing data 
+2024-06-30 13:26:43,745 MainThread perf INFO Starting indexing data
+2024-06-30 13:26:43,770 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:26:43,772 MainThread perf INFO In elapsed_time=0:00:00.027644, Done indexing data 
+2024-06-30 13:27:48,732 Thread-13 app.api.service INFO Connection to database created successfully
+2024-06-30 13:28:28,273 Thread-25 app.api.service INFO Connection to database created successfully
+2024-06-30 13:28:42,375 Thread-27 app.api.service INFO Connection to database created successfully
+2024-06-30 13:28:51,007 Thread-30 app.api.service INFO Connection to database created successfully
+2024-06-30 13:30:01,697 Thread-45 app.api.service INFO Connection to database created successfully
+2024-06-30 13:30:49,171 MainThread perf INFO Starting indexing data
+2024-06-30 13:30:49,303 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 13:32:42,035 MainThread perf INFO In elapsed_time=0:01:52.863102, Done indexing data 
+2024-06-30 13:57:22,454 Thread-18 app.api.service INFO Connection to database created successfully
+2024-06-30 14:04:48,541 MainThread perf INFO Starting indexing data
+2024-06-30 14:04:48,708 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:07:45,858 MainThread perf INFO In elapsed_time=0:02:57.316107, Done indexing data 
+2024-06-30 14:07:45,859 MainThread perf INFO Starting indexing data
+2024-06-30 14:07:45,908 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:07:45,911 MainThread perf INFO In elapsed_time=0:00:00.052531, Done indexing data 
+2024-06-30 14:07:45,911 MainThread perf INFO Starting indexing data
+2024-06-30 14:07:45,945 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:07:45,946 MainThread perf INFO In elapsed_time=0:00:00.035154, Done indexing data 
+2024-06-30 14:09:56,279 Thread-13 app.api.service INFO Connection to database created successfully
+2024-06-30 14:26:19,894 Thread-5 app.api.service INFO Connection to database created successfully
+2024-06-30 14:37:42,346 MainThread perf INFO Starting indexing data
+2024-06-30 14:37:42,538 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:40:42,495 MainThread perf INFO In elapsed_time=0:03:00.149019, Done indexing data 
+2024-06-30 14:40:42,496 MainThread perf INFO Starting indexing data
+2024-06-30 14:43:25,005 MainThread perf INFO Starting indexing data
+2024-06-30 14:43:37,342 MainThread perf INFO Starting indexing data
+2024-06-30 14:44:44,475 MainThread perf INFO Starting indexing data
+2024-06-30 14:44:44,679 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:47:42,980 MainThread perf INFO In elapsed_time=0:02:58.505467, Done indexing data 
+2024-06-30 14:47:42,981 MainThread perf INFO Starting indexing data
+2024-06-30 14:49:11,788 MainThread perf INFO Starting indexing data
+2024-06-30 14:49:11,968 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:50:24,583 MainThread perf INFO Starting indexing data
+2024-06-30 14:50:24,780 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:53:18,233 MainThread perf INFO In elapsed_time=0:02:53.649820, Done indexing data 
+2024-06-30 14:55:16,938 Thread-13 app.api.service INFO Connection to database created successfully
+2024-06-30 14:55:49,298 Thread-20 app.api.service INFO Connection to database created successfully
+2024-06-30 14:55:53,029 Thread-22 app.api.service INFO Connection to database created successfully
+2024-06-30 14:57:46,078 MainThread perf INFO Starting indexing data
+2024-06-30 14:57:46,286 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:57:46,287 MainThread __main__ ERROR While processing in Function fetch_data, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(1054, "Unknown column 'ncb_id_organism_name' in 'field list'")' in Line Number 63  File Name es_start.py
+2024-06-30 14:57:46,289 MainThread perf INFO In elapsed_time=0:00:00.210566, Done indexing data 
+2024-06-30 14:58:48,604 MainThread perf INFO Starting indexing data
+2024-06-30 14:58:48,795 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:58:48,798 MainThread __main__ ERROR While processing in Function fetch_data, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(1049, "Unknown database 'ncbi_id_organism_namebiofilm'")' in Line Number 63  File Name es_start.py
+2024-06-30 14:58:48,799 MainThread perf INFO In elapsed_time=0:00:00.195220, Done indexing data 
+2024-06-30 14:59:06,265 MainThread perf INFO Starting indexing data
+2024-06-30 14:59:06,422 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:59:06,424 MainThread __main__ ERROR While processing in Function fetch_data, we got <class 'pymysql.err.ProgrammingError'> Exception. 
+ '(1146, "Table 'biofilm.ncbi_id_organism_name' doesn't exist")' in Line Number 63  File Name es_start.py
+2024-06-30 14:59:06,425 MainThread perf INFO In elapsed_time=0:00:00.159501, Done indexing data 
+2024-06-30 14:59:14,882 MainThread perf INFO Starting indexing data
+2024-06-30 14:59:15,045 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 14:59:15,047 MainThread __main__ ERROR While processing in Function fetch_data, we got <class 'pymysql.err.OperationalError'> Exception. 
+ '(1054, "Unknown column 'ncb_id_organism_name' in 'field list'")' in Line Number 63  File Name es_start.py
+2024-06-30 14:59:15,048 MainThread perf INFO In elapsed_time=0:00:00.165559, Done indexing data 
+2024-06-30 15:00:04,799 MainThread perf INFO Starting indexing data
+2024-06-30 15:00:05,001 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 15:02:46,167 MainThread perf INFO In elapsed_time=0:02:41.368296, Done indexing data 
+2024-06-30 15:03:37,685 Thread-15 app.api.service INFO Connection to database created successfully
+2024-06-30 15:39:06,541 MainThread perf INFO Starting indexing data
+2024-06-30 15:39:06,732 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 15:41:52,029 MainThread perf INFO In elapsed_time=0:02:45.488732, Done indexing data 
+2024-06-30 15:42:33,762 Thread-11 app.api.service INFO Connection to database created successfully
+2024-06-30 15:44:36,346 Thread-32 app.api.service INFO Connection to database created successfully
+2024-06-30 15:51:08,938 MainThread perf INFO Starting indexing data
+2024-06-30 15:51:09,102 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 15:53:47,200 MainThread perf INFO In elapsed_time=0:02:38.261893, Done indexing data 
+2024-06-30 15:54:12,416 Thread-29 app.api.service INFO Connection to database created successfully
+2024-06-30 15:55:31,314 Thread-53 app.api.service INFO Connection to database created successfully
+2024-06-30 16:24:59,902 MainThread perf INFO Starting indexing data
+2024-06-30 16:25:10,950 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 16:27:38,413 MainThread perf INFO In elapsed_time=0:02:38.511255, Done indexing data 
+2024-06-30 16:28:12,381 Thread-15 app.api.service INFO Connection to database created successfully
+2024-06-30 16:35:53,113 MainThread perf INFO Starting indexing data
+2024-06-30 16:35:53,260 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 16:37:54,068 MainThread perf INFO In elapsed_time=0:02:00.955358, Done indexing data 
+2024-06-30 16:56:57,028 MainThread perf INFO Starting indexing data
+2024-06-30 16:56:57,183 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 16:58:54,365 MainThread perf INFO In elapsed_time=0:01:57.337415, Done indexing data 
+2024-06-30 16:59:37,906 Thread-10 app.api.service INFO Connection to database created successfully
+2024-06-30 17:00:50,773 Thread-22 app.api.service INFO Connection to database created successfully
+2024-06-30 17:03:45,387 MainThread perf INFO Starting indexing data
+2024-06-30 17:03:45,515 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 17:05:43,439 MainThread perf INFO In elapsed_time=0:01:58.051977, Done indexing data 
+2024-06-30 17:10:43,717 Thread-22 app.api.service INFO Connection to database created successfully
+2024-06-30 17:16:43,524 MainThread perf INFO Starting indexing data
+2024-06-30 17:16:43,678 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 17:18:56,955 MainThread perf INFO In elapsed_time=0:02:13.430698, Done indexing data 
+2024-06-30 17:19:43,528 Thread-23 app.api.service INFO Connection to database created successfully
+2024-06-30 17:19:46,710 Thread-24 app.api.service INFO Connection to database created successfully
+2024-06-30 17:21:36,699 MainThread perf INFO Starting indexing data
+2024-06-30 17:21:36,897 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 17:23:56,842 MainThread perf INFO In elapsed_time=0:02:20.143052, Done indexing data 
+2024-06-30 17:25:32,499 Thread-10 app.api.service INFO Connection to database created successfully
+2024-06-30 17:27:04,827 MainThread perf INFO Starting indexing data
+2024-06-30 17:27:04,988 MainThread app.api.service INFO Connection to database created successfully
+2024-06-30 17:29:00,465 MainThread perf INFO In elapsed_time=0:01:55.638440, Done indexing data 
+2024-06-30 17:30:45,232 Thread-14 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 303  File Name service.py
+2024-07-03 14:06:08,314 Thread-11 app.api.service INFO Connection to database created successfully
+2024-07-03 14:08:37,350 MainThread perf INFO Starting indexing data
+2024-07-03 14:08:37,496 MainThread app.api.service INFO Connection to database created successfully
+2024-07-03 14:10:46,169 MainThread perf INFO In elapsed_time=0:02:08.819839, Done indexing data 
+2024-07-03 14:11:22,250 Thread-18 app.api.service INFO Connection to database created successfully
+2024-07-03 14:43:35,813 Thread-27 app.api.service INFO Connection to database created successfully
+2024-07-03 14:43:39,184 Thread-28 app.api.service INFO Connection to database created successfully
+2024-07-03 14:56:00,543 MainThread perf INFO Starting indexing data
+2024-07-03 14:56:00,675 MainThread app.api.service INFO Connection to database created successfully
+2024-07-03 14:58:59,984 MainThread perf INFO Starting indexing data
+2024-07-03 14:59:00,199 MainThread app.api.service INFO Connection to database created successfully
+2024-07-03 15:01:06,446 MainThread perf INFO In elapsed_time=0:02:06.461996, Done indexing data 
+2024-07-03 15:01:29,025 Thread-13 app.api.service INFO Connection to database created successfully
+2024-07-03 15:04:07,339 MainThread perf INFO Starting indexing data
+2024-07-03 15:04:07,497 MainThread app.api.service INFO Connection to database created successfully
+2024-07-03 15:06:05,643 MainThread perf INFO In elapsed_time=0:01:58.303910, Done indexing data 
+2024-07-03 15:06:30,553 Thread-13 app.api.service INFO Connection to database created successfully
+2024-07-03 15:10:54,223 Thread-25 app.api.service ERROR While processing in Function search_recomendations, we got <class 'elasticsearch.NotFoundError'> Exception. 
+ 'NotFoundError(404, 'index_not_found_exception', 'no such index [experiments]', experiments, index_or_alias)' in Line Number 303  File Name service.py
+2024-07-05 18:34:06,876 Thread-11 app.api.service INFO Connection to database created successfully

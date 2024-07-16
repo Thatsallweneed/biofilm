@@ -84,7 +84,7 @@ def bulk_index(data, table_data):
         logger.error(f"While processing in Function {bulk_index.__qualname__}, we got {sys.exc_info()[0]} Exception. \n '{e}' in Line Number {sys.exc_info()[2].tb_lineno}  File Name {os.path.basename(sys.exc_info()[2].tb_frame.f_code.co_filename)}")
 
 #tables_data = [("ncbi_id","organism_name","Biofilm.organisms","organisms"),("experiment_id","experiment_name","Biofilm.experiment","experiments"),("experiment_id","project","Biofilm.experiment","projects")]
-tables_data = [("ncbi_id","ncbi_id_organism_name","Biofilm.organisms","organisms")]
+tables_data = [("ncbi_id","organism_name","Biofilm.organisms","organisms")]
 
 if __name__ == '__main__':
     for table_data in tables_data:

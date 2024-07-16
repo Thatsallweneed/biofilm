@@ -62,7 +62,7 @@ def login():
         password = request.form.get('password')
         user_credentials = fetch_userdata(email)
 
-        #print("user_credentials", user_credentials)
+        print("user_credentials", user_credentials)
         
         if user_credentials:
             stored_password = user_credentials.get('password')

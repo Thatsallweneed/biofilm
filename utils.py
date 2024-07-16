@@ -84,7 +84,7 @@ def fetch_userdata(email):
         with connection.cursor() as cur:
             cur.execute("""
                 SELECT email, password, has_upload_image_access, isadmin
-                FROM biofilm.user_info
+                FROM Biofilm.user_info
                 WHERE email = %s
             """, (email,))
             result = cur.fetchone()
